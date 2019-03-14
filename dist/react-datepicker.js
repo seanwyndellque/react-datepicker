@@ -447,15 +447,16 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
+	var React = __webpack_require__(1);
 	var Day = __webpack_require__(6);
 	var DateUtil = __webpack_require__(4);
 	var map = __webpack_require__(8);
 	var some = __webpack_require__(56);
 
 	var Calendar = React.createClass({
-	  displayName: "Calendar",
+	  displayName: 'Calendar',
 
 	  mixins: [__webpack_require__(59)],
 
@@ -485,7 +486,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      weekStart: "1"
+	      weekStart: '1'
 	    };
 	  },
 
@@ -544,7 +545,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    return React.createElement(
-	      "div",
+	      'div',
 	      { key: key },
 	      this.days(weekStart)
 	    );
@@ -572,7 +573,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      date: this.state.date,
 	      onClick: this.handleDayClick.bind(this, day),
 	      selected: new DateUtil(this.props.selected),
-	      disabled: disabled });
+	      disabled: disabled
+	    });
 	  },
 
 	  days: function days(weekStart) {
@@ -582,8 +584,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  header: function header() {
 	    return this.props.moment.weekdaysMin().map(function (day, key) {
 	      return React.createElement(
-	        "div",
-	        { className: "datepicker__day", key: key },
+	        'div',
+	        { className: 'datepicker__day', key: key },
 	        day
 	      );
 	    });
@@ -591,30 +593,34 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  render: function render() {
 	    return React.createElement(
-	      "div",
-	      { className: "datepicker", onClick: this.props.handleClick },
-	      React.createElement("div", { className: "datepicker__triangle" }),
+	      'div',
+	      { className: 'datepicker', onClick: this.props.handleClick },
+	      React.createElement('div', { className: 'datepicker__triangle' }),
 	      React.createElement(
-	        "div",
-	        { className: "datepicker__header" },
-	        React.createElement("a", { className: "datepicker__navigation datepicker__navigation--previous",
-	          onClick: this.decreaseMonth }),
+	        'div',
+	        { className: 'datepicker__header' },
+	        React.createElement('a', {
+	          className: 'datepicker__navigation datepicker__navigation--previous',
+	          onClick: this.decreaseMonth
+	        }),
 	        React.createElement(
-	          "span",
-	          { className: "datepicker__current-month" },
+	          'span',
+	          { className: 'datepicker__current-month' },
 	          this.state.date.localeFormat(this.props.locale, this.props.dateFormat)
 	        ),
-	        React.createElement("a", { className: "datepicker__navigation datepicker__navigation--next",
-	          onClick: this.increaseMonth }),
+	        React.createElement('a', {
+	          className: 'datepicker__navigation datepicker__navigation--next',
+	          onClick: this.increaseMonth
+	        }),
 	        React.createElement(
-	          "div",
+	          'div',
 	          null,
 	          this.header()
 	        )
 	      ),
 	      React.createElement(
-	        "div",
-	        { className: "datepicker__month" },
+	        'div',
+	        { className: 'datepicker__month' },
 	        this.weeks()
 	      )
 	    );

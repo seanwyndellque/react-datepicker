@@ -1,4 +1,3 @@
-var React = require( "react" );
 var Day = require( "./day" );
 var DateUtil = require( "./util/date" );
 var map = require( "lodash/collection/map" );
@@ -13,6 +12,7 @@ var Calendar = React.createClass( {
     moment: React.PropTypes.func.isRequired,
     dateFormat: React.PropTypes.string.isRequired,
     onSelect: React.PropTypes.func.isRequired,
+    handleClick: React.PropTypes.func.isRequired,
     hideCalendar: React.PropTypes.func.isRequired,
     minDate: React.PropTypes.object,
     maxDate: React.PropTypes.object,
@@ -133,7 +133,7 @@ var Calendar = React.createClass( {
 
   render: function() {
     return (
-      <div className="datepicker">
+      <div className="datepicker" onClick={this.props.handleClick}>
         <div className="datepicker__triangle"></div>
         <div className="datepicker__header">
           <a className="datepicker__navigation datepicker__navigation--previous"
